@@ -2,95 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Mental Health-Friendly Design System - Depression Detection from Voice Analysis */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Mental Health Color Palette - Light Mode */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 20% 99%;
+    --card-foreground: 215 25% 27%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 20% 99%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Calming Blue Primary */
+    --primary: 210 75% 48%;
+    --primary-foreground: 210 20% 98%;
+    --primary-soft: 210 45% 92%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft Green Secondary */
+    --secondary: 160 40% 88%;
+    --secondary-foreground: 160 60% 25%;
+    --healing-green: 160 60% 45%;
+    --healing-green-soft: 160 30% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Neutral Tones */
+    --muted: 210 15% 93%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 200 50% 85%;
+    --accent-foreground: 200 70% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors */
+    --success: 160 60% 45%;
+    --success-foreground: 160 30% 95%;
+    
+    --warning: 35 80% 55%;
+    --warning-foreground: 35 20% 95%;
+    
+    --destructive: 350 70% 55%;
+    --destructive-foreground: 350 20% 95%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Risk Level Colors */
+    --risk-low: 160 60% 45%;
+    --risk-moderate: 35 80% 55%;
+    --risk-high: 350 70% 55%;
 
-    --radius: 0.5rem;
+    --border: 210 25% 90%;
+    --input: 210 25% 95%;
+    --ring: 210 75% 48%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.75rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 75% 48%), hsl(200 70% 55%));
+    --gradient-healing: linear-gradient(135deg, hsl(160 60% 45%), hsl(180 50% 60%));
+    --gradient-soft: linear-gradient(180deg, hsl(210 20% 99%), hsl(210 15% 96%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 20px -4px hsl(210 75% 48% / 0.1);
+    --shadow-card: 0 4px 25px -6px hsl(210 75% 48% / 0.15);
+    --shadow-glow: 0 0 40px hsl(210 75% 48% / 0.2);
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Mental Health Color Palette - Dark Mode */
+    --background: 215 25% 8%;
+    --foreground: 210 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 25% 10%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Softer Blue Primary for Dark Mode */
+    --primary: 210 60% 65%;
+    --primary-foreground: 215 25% 8%;
+    --primary-soft: 210 35% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Muted Green Secondary */
+    --secondary: 160 25% 20%;
+    --secondary-foreground: 160 40% 85%;
+    --healing-green: 160 45% 55%;
+    --healing-green-soft: 160 25% 12%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 30% 22%;
+    --accent-foreground: 200 50% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors - Dark Mode */
+    --success: 160 45% 55%;
+    --success-foreground: 160 25% 12%;
+    
+    --warning: 35 70% 60%;
+    --warning-foreground: 35 25% 12%;
+    
+    --destructive: 350 60% 60%;
+    --destructive-foreground: 350 25% 12%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 20% 18%;
+    --input: 215 20% 16%;
+    --ring: 210 60% 65%;
+
+    /* Gradients - Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(210 60% 65%), hsl(200 55% 70%));
+    --gradient-healing: linear-gradient(135deg, hsl(160 45% 55%), hsl(180 40% 65%));
+    --gradient-soft: linear-gradient(180deg, hsl(215 25% 10%), hsl(215 20% 8%));
+    
+    /* Shadows - Dark Mode */
+    --shadow-soft: 0 2px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 25px -6px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(210 60% 65% / 0.15);
   }
 }
 
@@ -102,4 +132,84 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  /* Mental Health Component Styles */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-healing-green bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-card transition-all duration-300;
+  }
+  
+  .glow-on-hover {
+    @apply hover:shadow-glow transition-shadow duration-500;
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Custom scrollbar for mental health theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
 }
